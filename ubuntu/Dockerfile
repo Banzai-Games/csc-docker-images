@@ -11,6 +11,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
         gcc-10 \
         g++-10 \
         clang-11 \
+        libc++-11-dev \
+        libc++abi-11-dev \
         python3-pip \
         ccache \
         mesa-common-dev \
