@@ -41,7 +41,6 @@ RUN apt-get install -y --no-install-recommends \
 # ffmpeg
 RUN git clone https://git.ffmpeg.org/ffmpeg.git /tmp/ffmpeg && \
     cd /tmp/ffmpeg && \
-    git checkout release/4.4 && \
     ./configure \
         --disable-all --enable-shared --disable-static --disable-network \
         --disable-autodetect --enable-ffmpeg --enable-small \
