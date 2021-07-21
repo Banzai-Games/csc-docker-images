@@ -14,6 +14,7 @@ RUN pacman -Sy --noconfirm && \
         cmake \
         python-pip \
         ninja \
+        lapack \
         clang \
         libc++ \
         libc++abi && \
