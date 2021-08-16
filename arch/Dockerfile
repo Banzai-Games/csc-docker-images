@@ -10,6 +10,7 @@ RUN pacman -Sy --noconfirm && \
         wget \
         qt5 \
         git \
+        zsh \
         openssh \
         cmake \
         python-pip \
