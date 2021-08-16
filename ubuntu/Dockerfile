@@ -20,7 +20,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
         python3.8-dev \
         libssl-dev \
         pkg-config \
-        openssh-client && \
+        openssh-client \
+        libxcb-xinerama0 && \
     ln -s /usr/bin/gcc-10 /usr/bin/gcc && \
     ln -s /usr/bin/g++-10 /usr/bin/g++ && \
     ln -s /usr/bin/clang-11 /usr/bin/clang && \
