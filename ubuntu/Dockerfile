@@ -60,7 +60,7 @@ RUN apt-get install -y --no-install-recommends \
         xz-utils \
         libxml2-dev && \
     mkdir /fbx_sdk && cd /fbx_sdk && \
-    wget https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/2020-2/fbx20202_fbxsdk_linux.tar.gz && \
+    wget --user-agent="Chrome" https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/2020-2/fbx20202_fbxsdk_linux.tar.gz && \
     tar xfz fbx20202_fbxsdk_linux.tar.gz && \
     yes yes | ./fbx20202_fbxsdk_linux .
 
