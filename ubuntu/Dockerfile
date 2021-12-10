@@ -5,8 +5,8 @@ ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
     apt-get update && apt-get install -y --no-install-recommends \
         git \
-        cmake \
         make \
+        wget \
         ninja-build \
         gcc-10 \
         g++-10 \
@@ -28,6 +28,19 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     ln -s /usr/bin/clang-11 /usr/bin/clang && \
     ln -s /usr/bin/clang++-11 /usr/bin/clang++ && \
     pip3 install --upgrade conan numpy
+
+# cmake
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
+    apt-get update && apt-get install -y --no-install-recommends \
+        gnupg \
+        ca-certificates && \
+    wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null \
+        | gpg --dearmor - \
+        | tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null && \
+    echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' \
+        | tee /etc/apt/sources.list.d/kitware.list >/dev/null && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends cmake
 
 # openh264
 RUN apt-get install -y --no-install-recommends \
@@ -56,7 +69,6 @@ RUN git clone https://git.ffmpeg.org/ffmpeg.git /tmp/ffmpeg && \
 
 # fbxsdk
 RUN apt-get install -y --no-install-recommends \
-        wget \
         xz-utils \
         libxml2-dev && \
     mkdir /fbx_sdk && cd /fbx_sdk && \
