@@ -14,7 +14,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
         libc++-11-dev \
         libc++abi-11-dev \
         python3-pip \
-        python3-sphinx \
         ccache \
         mesa-common-dev \
         python3.8 \
@@ -27,7 +26,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     ln -s /usr/bin/g++-10 /usr/bin/g++ && \
     ln -s /usr/bin/clang-11 /usr/bin/clang && \
     ln -s /usr/bin/clang++-11 /usr/bin/clang++ && \
-    pip3 install --upgrade conan numpy
+    pip3 install --upgrade conan numpy sphinx
 
 # cmake
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
