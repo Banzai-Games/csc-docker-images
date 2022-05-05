@@ -25,7 +25,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     ln -s /usr/bin/g++-10 /usr/bin/g++ && \
     ln -s /usr/bin/clang-11 /usr/bin/clang && \
     ln -s /usr/bin/clang++-11 /usr/bin/clang++ && \
-    pip3 install --upgrade conan numpy sphinx
+    pip3 install --upgrade conan numpy sphinx sphinx-typo3-theme
 
 # cmake
 RUN apt-get install -y --no-install-recommends \
