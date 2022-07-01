@@ -20,7 +20,11 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
         libomp-dev \
         pkg-config \
         openssh-client \
-        libxcb-xinerama0 && \
+        libxcb-xinerama0 \
+        libfontconfig1-dev \
+        libegl-dev \
+        libdbus-1-3 \
+        libxkbcommon0 && \
     ln -s /usr/bin/gcc-10 /usr/bin/gcc && \
     ln -s /usr/bin/g++-10 /usr/bin/g++ && \
     ln -s /usr/bin/clang-11 /usr/bin/clang && \
